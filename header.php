@@ -13,6 +13,7 @@
   <header>
     <div class="sixteen">
       <h1 class="remove-buttom" style="margin-top: 40px"><a href="<?php echo home_url('/'); ?>"><?php bloginfo('name'); ?></a></h1>
+      <hr />
     </div>
   </header>
   
