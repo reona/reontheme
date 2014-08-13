@@ -4,7 +4,7 @@
     <div id="contents" class="thirteen offset-by-one">
       <div id="post_page" class="twelve">
         <div class="post-data">
-          <h2><a href="<?php the_permalink(); ?>"<?php echo get_the_title(); ?></a></h2>
+          <h2><a href="<?php the_permalink(); ?>"><?php echo get_the_title(); ?></a></h2>
           <p class="date"><?php the_time('Y/n/j'); ?></p>
           <ul class="soc">
             <li><a class="soc-twitter" href="https://twitter.com/share?url=<?php the_permalink(); ?>&text=<?php echo trim(wp_title( '', false)); ?>&via=your-twitter-id" target="_blank"></a></li>
