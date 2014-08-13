@@ -2,6 +2,7 @@
 
   <div id="main">
     <div id="contents" class="thirteen offset-by-one">
+      <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
       <div id="post_page" class="twelve">
         <div class="post-data">
           <h2><a href="<?php the_permalink(); ?>"><?php echo get_the_title(); ?></a></h2>
@@ -25,6 +26,7 @@
           </article>
         </div>
       </div>
+      <?php endwhile; ?>
     </div>
   </div>
 
