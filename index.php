@@ -8,7 +8,7 @@
           <h2><a href="<?php the_permalink(); ?>"><?php echo get_the_title(); ?></a></h2>
           <p class="date"><?php the_time('Y/n/j'); ?></p>
         </div>
-        <?php the_content(); ?>
+        <?php the_content('続きを読む'); ?>
       </article>
       <?php endwhile; ?>
     </div>
