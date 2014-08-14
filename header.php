@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title><?php wp_title(' | '); ?><?php bloginfo('name'); ?></title>
+  <title><?php wp_title(' | ',true,'right'); ?><?php bloginfo('name'); ?></title>
   <meta name="description" content="<?php bloginfo('description'); ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>" media="all">
