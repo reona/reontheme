@@ -83,6 +83,7 @@
 	em { font-style: italic; }
 	strong { font-weight: bold; color: #333; }
 	small { font-size: 80%; }
+  img[class*="wp-image-"] { height: auto; }
 
 /*	Blockquotes  */
 	blockquote, blockquote p { font-size: 17px; line-height: 24px; color: #777; font-style: italic; }
@@ -276,6 +277,7 @@
   #post_page h3 { font-size: 18px; line-height: 18px; margin: 15px 0 15px 0; }
   #post_page p { margin: 10px 0 10px 0; }
   #post_page > ul { margin-left: 20px; list-style: inherit;}
+  #post_page img { max-width: 100%; }
   #navigation { height: 25px;  margin: 5px 0 5px 0; }
   #navigation .past-post { float: left; }
   #navigation .future-post { float: right; }
@@ -432,3 +434,24 @@
 	border-width: 13px;
 	margin-top: -13px;
       }
+
+/*
+ * WordPress
+ */
+
+.wp-caption {
+  border: 1px solid #ddd;
+  text-align: center;
+  background-color: #f3f3f3;
+  padding-top: 4px;
+  margin: 10px;
+  -moz-border-radius: 3px;
+  -khtml-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  max-width: 100%;
+}
+
+.wp-caption img[calss*="wp-image-"] {
+  margin: 0;
+}
