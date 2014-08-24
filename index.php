@@ -10,6 +10,7 @@
         </div>
         <?php the_content('続きを読む'); ?>
       </article>
+      <hr>
       <?php endwhile; ?>
     </div>
   </div>
