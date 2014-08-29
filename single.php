@@ -14,6 +14,7 @@
           </ul>
         </div>
         <?php the_content(); ?>
+        <a href="http://2014.tokyo.wordcamp.org/" target="_blank"><img src="http://2014.tokyo.wordcamp.org/files/2014/08/bnr_wct2014_468x60.jpg" alt="WordCamp Tokyo 2014" /></a>
         <div class="category clearfix">
           <?php echo the_category(); ?>
         </div>
