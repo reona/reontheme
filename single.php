@@ -18,12 +18,16 @@
           <?php echo the_category(); ?>
         </div>
         <div id="navigation">
+          <?php if ( get_previous_post() ) : ?>
           <article class="past-post">
             <?php previous_post_link('%link','前の記事へ'); ?>
           </article>
+          <?php endif; ?>
+          <?php if ( get_next_post() ) : ?>
           <article class="future-post">
             <?php next_post_link('%link','次の記事へ'); ?>
           </article>
+          <?php endif; ?>
         </div>
       </div>
       <?php endwhile; ?>
