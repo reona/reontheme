@@ -17,6 +17,33 @@
         <div class="category clearfix">
           <?php echo the_category(); ?>
         </div>
+
+        <?php /* 関連記事の出力 */ ?>
+        <?php $categories = get_the_category($post->ID);
+              $category_ID = array();
+              foreach ($categories as $category):
+                array_push( $category_ID, $category -> cat_ID );
+              endforeach;
+        ?>
+        <?php
+          $args = array (
+                  'post_not_in' => array($post->ID),
+                  'category__in' => $category_ID,
+                  'posts_per_page' => 3,
+                  'orderby' => 'date'
+                );
+          $my_query = new WP_Query($args);
+?>
+        <?php if ( $my_query->have_posts() ):
+        while ( $my_query -> have_posts() ) : $my_query -> the_post();
+            <p>the_title();</p>
+            endwhile;
+            else:
+            <p>関連記事がありませんでした</p>
+            endif;
+            wp_rest_postdata();
+        ?>
+
         <div id="navigation">
           <?php if ( get_previous_post() ) : ?>
           <article class="past-post">
