@@ -24,6 +24,10 @@ function theme_customize_register($wp_customize) {
     'section'     => 'analytics_section',
     'type'        => 'text',
   ));
+}
 
+add_filter('excerpt_more','new_excerpt_more');
+function new_excerpt_more($more) {
+  return '....';
 }
 
