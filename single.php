@@ -30,7 +30,7 @@
                   'post__not_in' => array($post->ID),
                   'category__in' => $category_ID,
                   'posts_per_page' => 3,
-                  'orderby' => 'date'
+                  'orderby' => 'rand'
                 );
           $my_query = new WP_Query($args);
 ?>
