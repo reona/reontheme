@@ -276,6 +276,7 @@
   #contents { margin: 0 10px 0 10px;}
   #post_page h3 { font-size: 18px; line-height: 18px; margin: 15px 0 15px 0; }
   #post_page p { margin: 10px 0 10px 0; }
+  #post_page > ul { margin-left: 20px; list-style: inherit;}
   #post_page img { max-width: 100%; }
   #navigation { height: 25px;  margin: 5px 0 5px 0; }
   #navigation .past-post { float: left; }
