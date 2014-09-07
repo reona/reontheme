@@ -34,7 +34,7 @@
         <div class="relastion-entry">
         <h3>関連記事はこちら</h3>
         <?php if ( $my_query->have_posts() ): while ( $my_query -> have_posts() ) : $my_query -> the_post(); ?>
-          <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><li>
+          <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
           <?php endwhile; ?>
           <?php else: ?>
           <li><p>関連記事がありませんでした</p></li>
