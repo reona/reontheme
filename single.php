@@ -34,11 +34,10 @@
         <div class="relastion-entry">
         <h3>関連記事はこちら</h3>
         <?php if ( $my_query->have_posts() ): while ( $my_query -> have_posts() ) : $my_query -> the_post(); ?>
-          <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-          <?php the_excerpt(); ?>
+          <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><li>
           <?php endwhile; ?>
           <?php else: ?>
-          <p>関連記事がありませんでした</p>
+          <li><p>関連記事がありませんでした</p></li>
           <?php endif; ?>
         <?php wp_reset_postdata(); ?>
         </div>
