@@ -14,17 +14,48 @@
           </ul>
         </div>
         <?php the_content(); ?>
-        <a href="http://2014.tokyo.wordcamp.org/" target="_blank"><img src="http://2014.tokyo.wordcamp.org/files/2014/08/bnr_wct2014_468x60.jpg" alt="WordCamp Tokyo 2014" /></a>
+
+        <?php /* 関連記事の出力 */ ?>
+        <?php $categories = get_the_category($post->ID);
+              $category_ID = array();
+              foreach ($categories as $category):
+                array_push( $category_ID, $category -> cat_ID );
+              endforeach;
+        ?>
+        <?php
+          $args = array (
+                  'post__not_in' => array($post->ID),
+                  'category__in' => $category_ID,
+                  'posts_per_page' => 3,
+                  'orderby' => 'rand'
+                );
+          $my_query = new WP_Query($args);
+?>
+        <div class="relastion-entry">
+        <h3>関連記事はこちら</h3>
+        <?php if ( $my_query->have_posts() ): while ( $my_query -> have_posts() ) : $my_query -> the_post(); ?>
+          <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+          <?php endwhile; ?>
+          <?php else: ?>
+          <li><p>関連記事がありませんでした</p></li>
+          <?php endif; ?>
+        <?php wp_reset_postdata(); ?>
+        </div>
         <div class="category clearfix">
           <?php echo the_category(); ?>
         </div>
+        <a href="http://2014.tokyo.wordcamp.org/" target="_blank"><img src="http://2014.tokyo.wordcamp.org/files/2014/08/bnr_wct2014_468x60.jpg" alt="WordCamp Tokyo 2014" /></a>
         <div id="navigation">
+          <?php if ( get_previous_post() ) : ?>
           <article class="past-post">
             <?php previous_post_link('%link','前の記事へ'); ?>
           </article>
+          <?php endif; ?>
+          <?php if ( get_next_post() ) : ?>
           <article class="future-post">
             <?php next_post_link('%link','次の記事へ'); ?>
           </article>
+          <?php endif; ?>
         </div>
       </div>
       <?php endwhile; ?>
